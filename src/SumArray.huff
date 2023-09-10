@@ -1,0 +1,61 @@
+
+/** 
+ *  SUM_ARRAY HUFF EXERCISE from RareSkills 
+ *
+ *  
+ *  The task is to write within the `MAIN` macro below, write a functionality that takes an array of uint256 as an argument and returns the sum of all the numbers
+ *
+ *  NOTICE: The contract should revert when an unrecognized function is called
+ */
+
+/// Interface
+#define function sumArray(uint256[]) payable returns(uint256)
+
+/// Logic
+#define macro SUM_ARRAY() = takes(0) returns(0) {
+    0x44 calldatasize sub             // [arrayLength] 
+    
+    // sum=0
+    push0                             // [sum, arrayLength]
+    
+    // i=0
+    push0                             // [i, sum, arrayLength]
+
+    loopBegin:                       
+        dup3 dup2                     // [i, arrayLength, sum, arrayLength]
+        0x20 mul                      // [i*32, arrayLength, sum, arrayLength]  
+        lt iszero end jumpi           // [i*32 < arrayLength == false, i, sum, arrayLength]
+       
+        dup1 0x20 mul                 // [i*32, i, sum, arrayLength]
+        0x44 add                      // [i*32 + 68, i, sum, arrayLength]
+        calldataload                  // [arr[i], i, sum, arrayLength]
+        dup3                          // [sum, arr[i], i, sum, arrayLength]    
+        add                           // [sum + arr[i], i, oldSum, arrayLength]     
+        swap2 pop                     // [i, newSum, arrayLength]
+        0x1 add                       // [i+=1, newSum, arraylength]
+        loopBegin jump
+    
+    end:
+        pop                           // [finalSum, arrayLength]
+        push0 mstore                  // [arrayLength]
+        0x20 push0 return               
+}
+
+/// Function dispatcher
+#define macro MAIN() = takes(0) returns(0) {
+     // Identify which function is being called.
+    0x00 calldataload 
+    
+    // Extract the function singature
+    0xe0 shr
+
+    // Jump table
+    dup1 __FUNC_SIG(sumArray) eq  sumArray  jumpi
+
+    // Revert if the selector doesn't match
+    0x00 0x00 revert
+
+    sumArray:
+        SUM_ARRAY()
+    
+}
