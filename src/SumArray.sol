@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity ^0.8.19;
 
+///@notice Refernece implementation in Solidity for gas comparision
 contract SumArraySol {
     function sumArray(uint256[] calldata _array) public pure returns (uint256 sum) {
         for (uint256 i = 0; i < _array.length; i++) {

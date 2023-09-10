@@ -1,9 +1,8 @@
 <img align="right" width="150" height="150" top="100" src="./assets/blueprint.png">
 
-# huff-project-template • [![ci](https://github.com/huff-language/huff-project-template/actions/workflows/ci.yaml/badge.svg)](https://github.com/huff-language/huff-project-template/actions/workflows/ci.yaml) ![license](https://img.shields.io/github/license/huff-language/huff-project-template.svg) ![solidity](https://img.shields.io/badge/solidity-^0.8.15-lightgrey)
+# huff-sum-array • [![ci](https://github.com/huff-language/huff-project-template/actions/workflows/ci.yaml/badge.svg)](https://github.com/huff-language/huff-project-template/actions/workflows/ci.yaml) ![license](https://img.shields.io/github/license/huff-language/huff-project-template.svg) ![solidity](https://img.shields.io/badge/solidity-^0.8.15-lightgrey)
 
-Versatile Huff Project Template using Foundry.
-
+Sum Array Puzzle solved using Huff.
 
 ## Getting Started
 
@@ -29,8 +28,8 @@ Click "Use this template" on [GitHub](https://github.com/huff-language/huff-proj
 Or run:
 
 ```
-git clone https://github.com/huff-language/huff-project-template
-cd huff-project-template
+git clone https://github.com/PraneshASP/huff-sum-array
+cd huff-sum-array
 ```
 
 2. Install dependencies
@@ -53,24 +52,12 @@ forge test
 For more information on how to use Foundry, check out the [Foundry Github Repository](https://github.com/foundry-rs/foundry/tree/master/forge) and the [foundry-huff library repository](https://github.com/huff-language/foundry-huff).
 
 
-## Blueprint
 
-```ml
-lib
-├─ forge-std — https://github.com/foundry-rs/forge-std
-├─ foundry-huff — https://github.com/huff-language/foundry-huff
-scripts
-├─ Deploy.s.sol — Deployment Script
-src
-├─ SimpleStore — A Simple Storage Contract in Huff
-test
-└─ SimpleStore.t — SimpleStoreTests
-```
 
 
 ## License
 
-[The Unlicense](https://github.com/huff-language/huff-project-template/blob/master/LICENSE)
+[The Unlicense](https://github.com/huff-language/huff-sum-array/blob/master/LICENSE)
 
 
 ## Acknowledgements

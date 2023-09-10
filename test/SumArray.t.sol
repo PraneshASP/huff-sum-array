@@ -10,16 +10,16 @@ interface SumArray {
     function sumArray(uint256[] calldata nums) external pure returns (uint256);
 }
 
-contract SumArrayTest is Test, NonMatchingSelectorHelper {
+contract SumArrayHuffTest is Test, NonMatchingSelectorHelper {
     SumArray public sumArray;
     SumArraySol public sumArraySol;
 
     function setUp() public {
         sumArray = SumArray(HuffDeployer.config().deploy("SumArray"));
-        sumArraySol = new SumArraySol();
+        vm.label(address(sumArray), "SumArrayHuff");
     }
 
-    function testSumArray() external {
+    function testSumArrayHuff() external {
         uint256[] memory arr = new uint256[](10);
         arr[0] = 2;
         arr[1] = 4;
@@ -50,14 +50,14 @@ contract SumArrayTest is Test, NonMatchingSelectorHelper {
     }
 }
 
-contract SumArrayTestSol is Test, NonMatchingSelectorHelper {
+contract SumArraySolTest is Test, NonMatchingSelectorHelper {
     SumArraySol public sumArray;
 
     function setUp() public {
         sumArray = new SumArraySol();
     }
 
-    function testSumArray() external {
+    function testSumArraySol() external {
         uint256[] memory arr = new uint256[](10);
         arr[0] = 2;
         arr[1] = 4;
