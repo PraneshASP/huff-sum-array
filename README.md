@@ -2,7 +2,7 @@
 
 # huff-sum-array • [![ci](https://github.com/huff-language/huff-project-template/actions/workflows/ci.yaml/badge.svg)](https://github.com/huff-language/huff-project-template/actions/workflows/ci.yaml) ![license](https://img.shields.io/github/license/huff-language/huff-project-template.svg) ![solidity](https://img.shields.io/badge/solidity-^0.8.15-lightgrey)
 
-Sum Array Puzzle solved using Huff.
+Sum Array Puzzle solved using Huff. Read blog post [here](https://mirror.xyz/0xF314e9Cc3D5F382669eeB01d31f421aF931b9eBB/c16pMXWngLjek6N3iY3wogC--sLZ5BKhNOiyl80d8oU). 
 
 ## Getting Started
 
